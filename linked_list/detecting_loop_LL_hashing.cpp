@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//linked list node
+
 struct Node{
     int data;
     struct Node* next;
@@ -14,8 +14,6 @@ void push(struct Node** head_ref, int new_data){
     *head_ref=new_node;
 }
 
-//returns TRUE if there is a loop in linked list
-//else returns FALSE
 bool detectLoop(struct Node* h){
     unordered_set<Node*> s;
     while(h!=NULL){
@@ -30,7 +28,7 @@ bool detectLoop(struct Node* h){
 
 int main() 
 { 
-    /* Start with the empty list */
+    
     struct Node* head = NULL; 
   
     push(&head, 20); 
@@ -38,7 +36,6 @@ int main()
     push(&head, 15); 
     push(&head, 10); 
   
-    /* Create a loop for testing */
     head->next->next->next->next = head; 
   
     if (detectLoop(head)) 

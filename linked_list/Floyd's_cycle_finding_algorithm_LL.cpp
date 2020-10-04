@@ -28,7 +28,6 @@ int detectLoop(struct Node* list){
 
 int main() 
 { 
-    /* Start with the empty list */
     Node* head = NULL; 
   
     push(&head, 20); 
@@ -36,7 +35,6 @@ int main()
     push(&head, 15); 
     push(&head, 10); 
   
-    /* Create a loop for testing */
     head->next->next->next->next = head; 
     if (detectLoop(head)) 
         cout << "Loop found"; 

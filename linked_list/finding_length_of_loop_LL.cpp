@@ -27,7 +27,7 @@ int countNodes(struct Node *n)
   
 /* This function detects and counts loop  
 nodes in the list. If loop is not there  
-in then returns 0 */
+it then returns 0 */
 int countNodesinLoop(struct Node *list)  
 {  
     struct Node *slow_p = list, *fast_p = list;  
@@ -44,7 +44,7 @@ int countNodesinLoop(struct Node *list)
             return countNodes(slow_p);  
     }  
   
-    /* Return 0 to indeciate that  
+    /* Return 0 to indiciate that  
        their is no loop*/
     return 0;  
 }  
@@ -57,8 +57,7 @@ struct Node *newNode(int key)
     temp->next = NULL;  
     return temp;  
 }  
-  
-// Driver Code 
+   
 int main()  
 {  
     struct Node *head = newNode(1);  
@@ -67,7 +66,6 @@ int main()
     head->next->next->next = newNode(4);  
     head->next->next->next->next = newNode(5);  
   
-    /* Create a loop for testing */
     head->next->next->next->next->next = head->next;  
   
     cout << countNodesinLoop(head) << endl;  

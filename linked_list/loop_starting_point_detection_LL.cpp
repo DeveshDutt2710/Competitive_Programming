@@ -37,7 +37,7 @@ struct Node* detectLoop(struct Node* list){
 
 int main() 
 { 
-    /* Start with the empty list */
+
     Node* head = NULL; 
   
     push(&head, 10); 
@@ -45,7 +45,7 @@ int main()
     push(&head, 15); 
     push(&head, 20); 
     push(&head, 50);
-    /* Create a loop for testing */
+
     head->next->next->next->next->next = head->next->next;
     Node* res=detectLoop(head);
     if (res==NULL) 
