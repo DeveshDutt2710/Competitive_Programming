@@ -1,4 +1,8 @@
 //modified structure of LL
+//time complexity : O(n)
+//space complexity : O(1)
+
+
 struct Node{
     int data;
     int flag;
