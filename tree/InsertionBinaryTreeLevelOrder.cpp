@@ -1,5 +1,4 @@
 #include <iostream>
-#include <queue>
 using namespace std;
 
 struct Node{
@@ -8,8 +7,9 @@ struct Node{
     Node *right;
 };
 
-Node *CreateNode(int data){
-    Node *newNode = new Node();
+Node *CreateNode(int data)
+{
+    Node *newNode= new Node();
     if(!newNode){
         cout<<"Memory error\n";
         return NULL;
@@ -19,26 +19,29 @@ Node *CreateNode(int data){
     return newNode;
 }
 
-Node *InsertNode(Node *root, int data){
+Node *InsertNode(Node *root, int data)
+{
     if(root==NULL){
         root=CreateNode(data);
         return root;
     }
-    queue<Node*> q;
+    
+    queue<Node> *q;
     q.push(root);
     
     while(!q.empty()){
         Node *temp=q.front();
-        q.pop();
+        q.pop;
         
-        if(temp->left != NULL){
+        if(temp->left!=NULL){
             q.push(temp->left);
         }
         else{
             temp->left=CreateNode(data);
             return root;
         }
-        if(temp->right != NULL){
+        
+        if(temp->right!=NULL){
             q.push(temp->right);
         }
         else{
@@ -53,29 +56,29 @@ void inorder(Node *temp){
         return;
     }
     inorder(temp->left);
-    cout<<temp->data<<' ';
+    cout<<temp->data<<" ";
     inorder(temp->right);
 }
 
-int main() {
-	// your code goes here
-	Node *root=CreateNode(10);
-	root->left=CreateNode(11);
-	root->left->left=CreateNode(7);
-	root->right=CreateNode(9);
-	root->right->left=CreateNode(15);
-	root->right->right=CreateNode(8);
-	
-	cout<<"Inorder traversal before insertion: ";
-	inorder(root);
-	cout<<endl;
-	
-	int key =12;
-	root=InsertNode(root, key);
-	
-	cout<<"Inorder traversal after insertion: ";
-	inorder(root);
-	cout<<endl;
-	
-	return 0;
+int main()
+{
+    Node* root = CreateNode(10);
+    root->left = CreateNode(11);
+    root->left->left = CreateNode(7);
+    root->right = CreateNode(9);
+    root->right->left = CreateNode(15);
+    root->right->right = CreateNode(8);
+ 
+    cout << "Inorder traversal before insertion: ";
+    inorder(root);
+    cout << endl;
+ 
+    int key = 12;
+    root = InsertNode(root, key);
+ 
+    cout << "Inorder traversal after insertion: ";
+    inorder(root);
+    cout << endl;
+ 
+    return 0;
 }
