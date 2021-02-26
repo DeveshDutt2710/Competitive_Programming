@@ -1,3 +1,14 @@
+/*
+possible if x<y
+and certain cases when x=1 and or y=1,2,3,4 
+check all these cases and add/subtract them accordingly from the count
+
+Time Complexity : O(nLogn + mLogn), where m and n are the sizes of arrays X[] and Y[] respectively. The sort step takes O(nLogn) time. Then every element of X[] is searched in Y[] using binary search. This step takes O(mLogn) time. 
+
+*/
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
